@@ -1,0 +1,31 @@
+{
+  "name": "numbpoet",
+  "version": "1.0.0",
+  "description": "Numb poet Blog",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anshuljaiswal1998/NumbBlog.git"
+  },
+  "keywords": [
+    "Numb",
+    "Poet",
+    "Blog"
+  ],
+  "author": "Anshul Jaiswal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anshuljaiswal1998/NumbBlog/issues"
+  },
+  "homepage": "https://github.com/anshuljaiswal1998/NumbBlog#readme",
+  "dependencies": {
+    "compression": "^1.7.3",
+    "crypto": "^1.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.9",
+    "nodemon": "^1.18.3"
+  }
+}
