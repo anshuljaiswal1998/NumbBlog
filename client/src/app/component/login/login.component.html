@@ -1,0 +1,44 @@
+<h1 class="page-header">Login Page</h1>
+
+<div class="row show-hide-message">
+  <div [ngClass]="messageClass">
+    {{ message }}
+  </div>
+</div>
+
+<form class="form-horizontal" action='' method="POST" [formGroup]="form" (submit)="onLoginSubmit()">
+  <fieldset>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="username">Username</label>
+      <div [ngClass]="{'has-error': (form.controls.username.errors && form.controls.username.dirty) || (!usernameValid && form.controls.username.dirty) , 'has-success': !form.controls.username.errors && usernameValid }">
+        <input type="text" id="username" name="username" placeholder="" class="input-xlarge form-control" formControlName="username"/>
+        <ul class="help-block">
+        <li *ngIf="form.controls.username.errors?.required && form.controls.username.dirty">
+        This field is required</li>
+        </ul>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="password">Password</label>
+      <div [ngClass]="{'has-error': (form.controls.password.errors && form.controls.password.dirty) , 'has-success': !form.controls.password.errors }">
+        <input type="password" id="password" name="password" placeholder="" class="form-control" formControlName="password"/>
+        <ul class="help-block">
+        <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">
+        Password should be at least 4 characters</li>
+        <li *ngIf="(form.controls.password.errors?.minlength || form.controls.password.errors?.maxlength) && form.controls.password.dirty">
+        Minimun Length 4 for a Valid Password </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+ 
+    <input [disabled]="!form.valid || processing" class="btn btn-primary" type="submit" value="Login" />
+  </fieldset>
+</form>
+
+<!-- <p>Username :{{ form.controls.username.value }}</p> -->
